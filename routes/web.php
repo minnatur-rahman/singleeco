@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
@@ -30,12 +31,26 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+
+
+    Route::controller(AdminController::class)->group(function(){
+        Route::get('/admin/index', 'index');
+    });
+
+    Route::controller(CategoryController::class)->group(function(){
+        Route::get('/admin/all-category', 'index')->name('allcategory');
+    });
+
+
+
+
 });
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/admin/index', [AdminController::class, 'index']);
-});
+
+
+
 
 
 

@@ -11,6 +11,4 @@ class AdminController extends Controller
     {
         return view('admin.layouts.template');
     }
-
-    public function
 }
