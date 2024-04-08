@@ -28,8 +28,8 @@
                             <td>10</td>
                             <td>90</td>
                             <td>
-                                <a href="">Edit</a>
-                                <a href="">Delete</a>
+                                <a href="" class="btn btn-primary">Edit</a>
+                                <a href="" class="btn btn-warning">Delete</a>
                             </td>
                         </tr>
                     </tbody>
