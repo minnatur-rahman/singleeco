@@ -15,7 +15,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>@yield('page_title')</title>
 
     <meta name="description" content="" />
 
@@ -86,14 +86,14 @@
             </li>
 
             <li class="menu-item">
-                <a href="index.html" class="menu-link">
+                <a href="{{ route('addcategory') }}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-home-circle"></i>
                   <div data-i18n="Analytics">Add Category</div>
                 </a>
               </li>
 
               <li class="menu-item">
-                <a href="index.html" class="menu-link">
+                <a href="{{ route('allcategory') }}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-home-circle"></i>
                   <div data-i18n="Analytics">All Category</div>
                 </a>
@@ -105,14 +105,14 @@
               </li>
 
               <li class="menu-item">
-                  <a href="index.html" class="menu-link">
+                  <a href="{{ route('addsubcategory') }}" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-home-circle"></i>
                     <div data-i18n="Analytics">Add SubCategory</div>
                   </a>
                 </li>
 
                 <li class="menu-item">
-                  <a href="index.html" class="menu-link">
+                  <a href="{{ route('allsubcategory') }}" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-home-circle"></i>
                     <div data-i18n="Analytics">All SubCategory</div>
                   </a>
@@ -124,14 +124,14 @@
                   </li>
 
                   <li class="menu-item">
-                      <a href="index.html" class="menu-link">
+                      <a href="{{ route('addproduct') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
                         <div data-i18n="Analytics">Add Product</div>
                       </a>
                     </li>
 
                     <li class="menu-item">
-                      <a href="index.html" class="menu-link">
+                      <a href="{{ route('allproducts') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
                         <div data-i18n="Analytics">All Product</div>
                       </a>
@@ -143,27 +143,11 @@
                       </li>
 
                       <li class="menu-item">
-                          <a href="index.html" class="menu-link">
+                          <a href="{{ route('pendingorder') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Pending Orders</div>
                           </a>
                         </li>
-
-                        <li class="menu-item">
-                          <a href="index.html" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="Analytics">Completed Orders</div>
-                          </a>
-                        </li>
-
-                        <li class="menu-item">
-                            <a href="index.html" class="menu-link">
-                              <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                              <div data-i18n="Analytics">Cancel Orders</div>
-                            </a>
-                          </li>
-
-
 
           </ul>
         </aside>
