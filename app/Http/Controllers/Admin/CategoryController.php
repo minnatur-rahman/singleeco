@@ -14,7 +14,7 @@ class CategoryController extends Controller
 
     public function addcategory()
     {
-
+        return view('admin.addcategory');
     }
 }
 
