@@ -53,11 +53,16 @@ class SubcategoryController extends Controller
         return view('admin.editsubcategory', compact('subcatinfo'));
     }
 
-    public function UpdateSubCategory(Request $request)
+    public function UpdateSubCategory(Request $request, $id)
     {
         $request->validate([
             'subcategory_name' => 'required|unique:subcategories',
-            'category_id' => 'required'
         ]);
+
+        Subcategory::findOrFail($id)->update([
+            'subcategory_name' => $request->subcategory_name,
+            'slug' => strtolower(str_replace('','-',$request->subcategory_name)),
+        ]);
+
     }
 }
