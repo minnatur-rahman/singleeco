@@ -7,6 +7,8 @@ use App\Models\Category;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
+use function Ramsey\Uuid\v1;
+
 class SubcategoryController extends Controller
 {
     public function index()
@@ -44,5 +46,10 @@ class SubcategoryController extends Controller
         return redirect()->route('allsubcategory')->with('message', 'Sub Category Add Successfully !');
     }
 
+    public function EditSubCategory($id)
+    {
+        $subcategory_info = Subcategory::findOrFail($id);
 
+        return view('')
+    }
 }
