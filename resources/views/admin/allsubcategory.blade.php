@@ -1,11 +1,16 @@
 @extends('admin.layouts.template')
 @section('page_title')
-All Sub Category - Single Ecom
+    All Sub Category - Single Ecom
 @section('content')
     <!-- Bootstrap Table with Header - Light -->
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages/</span>All Sub Category</h4>
         <div class="card">
+            @if (session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
             <h5 class="card-header">Available Sub Category Information</h5>
             <div class="table-responsive text-nowrap">
                 <table class="table">
