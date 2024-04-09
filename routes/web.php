@@ -47,6 +47,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/admin/store-category', 'StoreCategory')->name('storecategory');
         Route::get('/admin/edit-category/{id}', 'EditCategory')->name('editcategory');
         Route::post('/admin/update-category', 'UpdateCategory')->name('updatecategory');
+        Route::get('/admin/delete-category/{id}', 'DeleteCategory')->name('deletecategory');
 
     });
 
