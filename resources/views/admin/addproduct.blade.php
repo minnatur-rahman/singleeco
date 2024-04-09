@@ -66,9 +66,29 @@ Add Product - Single Ecom
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-name"> Select Sub Category </label>
+                            <div class="col-sm-10">
+                                <select class="form-select" id="category" name="category_name"
+                                    aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-name">Upload Produc Image</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="file" id="formFile" />
+                            </div>
+                        </div>
+
                         <div class="row justify-content-end">
                             <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Add Sub Category</button>
+                                <button type="submit" class="btn btn-primary">Add Sub Product</button>
                             </div>
                         </div>
                     </form>
