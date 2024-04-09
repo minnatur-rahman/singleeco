@@ -18,7 +18,7 @@ Add Product - Single Ecom
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Product Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="subcategory_name" name="subcategory_name"
+                                <input type="text" class="form-control" id="product_name" name="product_name"
                                     placeholder="Electronics" />
                             </div>
                         </div>
@@ -26,7 +26,7 @@ Add Product - Single Ecom
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Product Price</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="subcategory_name" name="subcategory_name"
+                                <input type="number" class="form-control" id="price" name="price"
                                     placeholder="23" />
                             </div>
                         </div>
@@ -34,7 +34,7 @@ Add Product - Single Ecom
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Product Quantity</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="subcategory_name" name="subcategory_name"
+                                <input type="number" class="form-control" id="quantity" name="quantity"
                                     placeholder="2000" />
                             </div>
                         </div>
@@ -42,7 +42,7 @@ Add Product - Single Ecom
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Product Short Description</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                                <textarea class="form-control" name="product_short_des" id="product_short_des" cols="30" rows="10"></textarea>
                             </div>
                         </div>
 
