@@ -25,7 +25,7 @@
 
                         <div class="row justify-content-end">
                             <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Add Sub Category</button>
+                                <button type="submit" class="btn btn-primary">Update Sub Category</button>
                             </div>
                         </div>
                     </form>
