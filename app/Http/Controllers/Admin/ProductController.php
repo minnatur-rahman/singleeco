@@ -18,6 +18,6 @@ class ProductController extends Controller
     {
         $categories = Category::latest()->get();
         $subcategories = Subcategory::latest()->get();
-        return view('admin.addproduct');
+        return view('admin.addproduct', compact('categories','subcategories'));
     }
 }
