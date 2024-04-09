@@ -48,8 +48,8 @@ class SubcategoryController extends Controller
 
     public function EditSubCategory($id)
     {
-        $subcategory_info = Subcategory::findOrFail($id);
+        $subcatinfo = Subcategory::findOrFail($id);
 
-        return view('admin.editsubcategory', compact('subcategory_info'));
+        return view('admin.editsubcategory', compact('subcatinfo'));
     }
 }
