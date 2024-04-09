@@ -11,8 +11,8 @@ class SubcategoryController extends Controller
 {
     public function index()
     {
-
-        return view('admin.allsubcategory');
+        $allsubcategories = Subcategory::latest()->get();
+        return view('admin.allsubcategory', compact('allsubcategories'));
     }
 
     public function addsubcategory()
@@ -43,4 +43,6 @@ class SubcategoryController extends Controller
 
         return redirect()->route('allsubcategory')->with('message', 'Sub Category Add Successfully !');
     }
+
+
 }
