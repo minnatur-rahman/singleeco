@@ -50,6 +50,6 @@ class SubcategoryController extends Controller
     {
         $subcategory_info = Subcategory::findOrFail($id);
 
-        return view('')
+        return view('admin.editsubcategory', compact('subcategory_info'));
     }
 }
