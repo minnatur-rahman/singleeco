@@ -49,7 +49,7 @@ Add Product - Single Ecom
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Product Long Description</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                                <textarea class="form-control" name="product_long_des" id="product_long_des" cols="30" rows="10"></textarea>
                             </div>
                         </div>
 
