@@ -56,12 +56,12 @@ Add Product - Single Ecom
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name"> Select Category </label>
                             <div class="col-sm-10">
-                                <select class="form-select" id="category" name="category_name"
+                                <select class="form-select" id="product_category_id" name="product_category_id"
                                     aria-label="Default select example">
-                                    <option selected>Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option selected>Select Product Category</option>
+                                    @foreach ($categories as $category )
+                                       <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -69,12 +69,12 @@ Add Product - Single Ecom
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name"> Select Sub Category </label>
                             <div class="col-sm-10">
-                                <select class="form-select" id="category" name="category_name"
+                                <select class="form-select" id="product_subcategory_id " name="product_subcategory_id"
                                     aria-label="Default select example">
-                                    <option selected>Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option selected>Select Product Sub Category</option>
+                                    @foreach ( $subcategories as $subcategory )
+                                        <option value="{{  }}">One</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
