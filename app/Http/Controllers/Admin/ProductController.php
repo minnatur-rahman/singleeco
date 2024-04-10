@@ -31,8 +31,19 @@ class ProductController extends Controller
             'product_long_des' => 'required',
             'product_category_id' => 'required',
             'product_subcategory_id' => 'required',
-            'category_id' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'product_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
         ]);
+
+        $image = $request->file('product_img');
+        $img_name = hexdec(uniqid()).'.'. $image->getClientOriginalExtension();
+        $request->product_img->move(public_path('upload'), $img_name);
+        $img_url = 'upload/' .$img_name;
+
+        $category_id = $request->product_category_id;
+        $subcategory_id = $request->product_subcategory_id;
+
+        $category_name = Category::where('id',$category_id)->value('category_name');
+        $subcategory_name = Subcategory::where('id',$subcategory_id)->value('subcategory_name');
     }
 }
