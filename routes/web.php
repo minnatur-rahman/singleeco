@@ -64,7 +64,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/admin/all-products', 'index')->name('allproducts');
         Route::get('/admin/add-product', 'addproduct')->name('addproduct');
         Route::post('/admin/store-product', 'StoreProduct')->name('storeproduct');
-        Route::get('/admin/edit-product-img/{id}', 'EditProductImg')->name('editproductimage');
+        Route::get('/admin/edit-product-img/{id}', 'EditProductImg')->name('editproductimg');
+        Route::post('/admin/update-product-img', 'UpdateProductImg')->name('updateproductimg');
+        Route::get('/admin/edit-product/{id}', 'EditProduct')->name('editproduct');
     });
 
 
