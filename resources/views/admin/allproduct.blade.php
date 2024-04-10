@@ -25,16 +25,22 @@
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
+                        @foreach ( $products as $product )
                         <tr>
-                            <td>1</td>
-                            <td>Fan</td>
-                            <td></td>
-                            <td>90</td>
+                            <td>{{ $product->id }}</td>
+                            <td>{{ $product->product_name }}</td>
+                            <td>
+                                <img src="{{ asset($product->product_img) }}" alt="">
+                                <br>
+                                <a href="" class="btn btn-primary">Edit</a>
+                            </td>
+                            <td>{{ $product->price }}</td>
                             <td>
                                 <a href="" class="btn btn-primary">Edit</a>
                                 <a href="" class="btn btn-warning">Delete</a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
