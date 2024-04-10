@@ -53,13 +53,17 @@ class ProductController extends Controller
             'product_long_des' => $request->product_long_des,
             'price' => $request->price,
             'product_category_name' => $category_name,
-            'product_subcategory_name' => $subcategory_name,
+            'product_subcategory_name' =>$subcategory_name,
             'product_category_id' => $request->product_category_id,
             'product_subcategory_id' => $request->product_subcategory_id,
             'product_img' =>  $img_url,
             'quantity' => $request->quantity,
-            'subcategory_name' => $request->subcategory_name,
-            'slug' => strtolower(str_replace('','-',$request->subcategory_name)),
+            'slug' => strtolower(str_replace('','-',$request->product_name)),
         ]);
+
+        Category::where('id',$category_id)->increment('product_count', 1);
+        Subcategory::where('id',$subcategory_id)->increment('product_count', 1);
+
+        return redirect()->route('allproducts')->with('message', 'Product Add Successfully !');
     }
 }
