@@ -24,8 +24,15 @@ class ProductController extends Controller
     public function StoreProduct(Request $request)
     {
         $request->validate([
-            'subcategory_name' => 'required|unique:subcategories',
-            'category_id' => 'required'
+            'product_name' => 'required|unique:products',
+            'price' => 'required',
+            'quantity' => 'required',
+            'product_short_des' => 'required',
+            'product_long_des' => 'required',
+            'product_category_id' => 'required',
+            'product_subcategory_id' => 'required',
+            'category_id' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
         ]);
     }
 }
