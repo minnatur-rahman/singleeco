@@ -63,8 +63,8 @@ Route::middleware('auth')->group(function () {
     Route::controller(ProductController::class)->group(function(){
         Route::get('/admin/all-products', 'index')->name('allproducts');
         Route::get('/admin/add-product', 'addproduct')->name('addproduct');
-        Route::get('/admin/add-product', 'addproduct')->name('addproduct');
         Route::post('/admin/store-product', 'StoreProduct')->name('storeproduct');
+        Route::get('/admin/edit-product-img/{id}', 'EditProductImg')->name('editproductimage');
     });
 
 

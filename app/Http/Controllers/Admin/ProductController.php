@@ -67,4 +67,10 @@ class ProductController extends Controller
 
         return redirect()->route('allproducts')->with('message', 'Product Add Successfully !');
     }
+
+    public function EditProductImg($id)
+    {
+        $productInfo = Product::findOrFail($id);
+        return view('admin.editproductimg', compact('productInfo'));
+    }
 }
