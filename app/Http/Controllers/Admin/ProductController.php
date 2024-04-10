@@ -20,4 +20,12 @@ class ProductController extends Controller
         $subcategories = Subcategory::latest()->get();
         return view('admin.addproduct', compact('categories','subcategories'));
     }
+
+    public function StoreProduct(Request $request)
+    {
+        $request->validate([
+            'subcategory_name' => 'required|unique:subcategories',
+            'category_id' => 'required'
+        ]);
+    }
 }
