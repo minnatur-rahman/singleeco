@@ -73,7 +73,7 @@ Add Product - Single Ecom
                                     aria-label="Default select example">
                                     <option selected>Select Product Sub Category</option>
                                     @foreach ( $subcategories as $subcategory )
-                                        <option value="{{  }}">One</option>
+                                        <option value="{{ $subcategory->id }}">{{ $subcategory->subcategory_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -82,7 +82,7 @@ Add Product - Single Ecom
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Upload Produc Image</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="file" id="formFile" />
+                                <input class="form-control" type="file" name="product_img" id="product_img" />
                             </div>
                         </div>
 
