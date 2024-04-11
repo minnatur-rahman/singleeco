@@ -1,3 +1,5 @@
+@extends('user_template.layouts.template')
+@section('main-content')
 <div class="fashion_section">
     <div id="main_slider" class="carousel slide" data-ride="carousel">
        <div class="carousel-inner">
@@ -419,3 +421,5 @@
        </div>
     </div>
  </div>
+
+@endsection

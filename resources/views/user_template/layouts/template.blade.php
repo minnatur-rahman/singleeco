@@ -173,15 +173,13 @@
       </div>
       <!-- banner bg main end -->
       <!-- fashion section start -->
-
       {{-- Common Part --}}
+      <div class="container py-5">
 
-      <div class="container">
-        ddddd
+        @yield('main-content')
+
       </div>
-
       {{-- Common Part --}}
-
       <!-- jewellery  section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">

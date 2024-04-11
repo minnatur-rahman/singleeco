@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SubcategoryController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -20,6 +21,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'Index')->name('home');
+});
+
+Route::controller(ClientController::class)->group(function(){
+    Route::get('/category', 'CategoryPage')->name('category');
+    Route::get('/single-product', 'SingleProduct')->name('singleproduct');
+    Route::get('/add-to-cart', 'AddToCart')->name('addtocart');
+    Route::get('/checkout', 'Checkout')->name('checkout');
+    Route::get('/user-profile', 'UserProfile')->name('userprofile');
 });
 
 Route::get('/dashboard', function () {
@@ -72,11 +81,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/admin/pending-order', 'index')->name('pendingorder');
 
     });
-
-
-
-
-
 
 });
 
