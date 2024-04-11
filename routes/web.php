@@ -29,6 +29,9 @@ Route::controller(ClientController::class)->group(function(){
     Route::get('/add-to-cart', 'AddToCart')->name('addtocart');
     Route::get('/checkout', 'Checkout')->name('checkout');
     Route::get('/user-profile', 'UserProfile')->name('userprofile');
+    Route::get('/new-release', 'NewRelease')->name('newrelease');
+    Route::get('/todays-deal', 'TodaysDeal')->name('todaysdeal');
+    Route::get('/custom-service', 'CustomerService')->name('customerservice');
 });
 
 Route::get('/dashboard', function () {
