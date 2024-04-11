@@ -10,4 +10,24 @@ class ClientController extends Controller
     {
         return view('user_template.category');
     }
+
+    public function SingleProduct()
+    {
+
+    }
+
+    public function AddToCart()
+    {
+
+    }
+
+    public function Checkout()
+    {
+
+    }
+
+    public function UserProfile()
+    {
+
+    }
 }
