@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-    public function CategoryPage()
+    public function CategoryPage($id)
     {
-        return view('user_template.category');
+        $category = Category::findOrFail($id);
+        return view('user_template.category', compact('category'));
     }
 
     public function SingleProduct()
