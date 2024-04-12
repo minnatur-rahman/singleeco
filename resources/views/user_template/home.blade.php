@@ -3,7 +3,7 @@
     <div class="fashion_section">
         <div id="main_slider">
             <div class="container">
-                <h1 class="fashion_taital">All</h1>
+                <h1 class="fashion_taital">All Product</h1>
                 <div class="fashion_section_2">
                     <div class="row">
 
