@@ -15,6 +15,11 @@
                 </div>
                 <div class="my-3 product-details">
                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, labore similique quas libero facilis possimus, doloribus minus maxime natus cumque quasi cupiditate voluptas aliquam, esse autem eligendi illo ea tenetur!</p>
+                    <ul class="p-2 bg-light my-2">
+                        <li>Category - Electronic</li>
+                        <li>Subcategory - Mobile</li>
+                        <li>Available Quantity - 10</li>
+                    </ul>
                 </div>
             </div>
         </div>
