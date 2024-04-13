@@ -37,6 +37,8 @@ Route::middleware(['auth', 'verified'])->group(function (){
         Route::get('/add-to-cart', 'AddToCart')->name('addtocart');
         Route::get('/checkout', 'Checkout')->name('checkout');
         Route::get('/user-profile', 'UserProfile')->name('userprofile');
+        Route::get('/user-profile/pending-orders', 'PendingOrders')->name('pendingorders');
+        Route::get('/user-profile/history', 'History')->name('history');
         Route::get('/todays-deal', 'TodaysDeal')->name('todaysdeal');
         Route::get('/custom-service', 'CustomerService')->name('customerservice');
     });
