@@ -18,7 +18,9 @@ class ClientController extends Controller
     public function SingleProduct($id)
     {
         $product = Product::findOrFail($id);
-        return view('user_template.product', compact('product'));
+        $subcat_id = Product::where('id',$id)->value('product_subcategory_id');
+        $related_product = Product::where('product_subcategory_id', $subcat_id)->latest()->get();
+        return view('user_template.product', compact('product', 'related_product'));
     }
 
     public function AddToCart()
