@@ -32,11 +32,21 @@ Route::controller(ClientController::class)->group(function(){
     Route::get('/custom-service', 'CustomerService')->name('customerservice');
 });
 
+Route::middleware(['auth', 'verified'])->group(function (){
+        Route::controller(ClientController::class)->group(function(){
+        Route::get('/add-to-cart', 'AddToCart')->name('addtocart');
+        Route::get('/checkout', 'Checkout')->name('checkout');
+        Route::get('/user-profile', 'UserProfile')->name('userprofile');
+        Route::get('/todays-deal', 'TodaysDeal')->name('todaysdeal');
+        Route::get('/custom-service', 'CustomerService')->name('customerservice');
+    });
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
