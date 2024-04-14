@@ -17,12 +17,27 @@
                         <th>Price</th>
                         <th>Action</th>
                     </tr>
-                    @foreach ($cart_items as $items )
+                    @php
+                        $total = 0;
+                    @endphp
+                    @foreach ($cart_items as $item )
                         <tr>
-                            <td>{{ $items->product_id }}</td>
-                            <td>{{ $items->quantity }}</td>
-                            <td>{{ $items->price }}</td>
-                            <td><a href="" class="btn btn-warning">Remove</a></td>
+                            @php
+                               $product_name = App\Models\Product::where('id',$item->product_id)->value('product_name');
+                               $img = App\Models\Product::where('id',$item->product_id)->value('product_img');
+                            @endphp
+                            <td><img src="{{ asset($img) }}" style="height: 80px"></td>
+                            <td>{{ $product_name }}</td>
+                            <td>{{ $item->quantity }}</td>
+                            <td>{{$item->price }}</td>
+                            <td><a href="#" class="btn btn-warning">Remove</a></td>
+                        </tr>
+                        @php
+                            $total = $total + $item->price;
+                        @endphp
+                        <tr>
+                            <td>Total</td>
+                            <td>{{ $total }}</td>
                         </tr>
                     @endforeach
                 </table>
@@ -31,3 +46,9 @@
     </div>
 </div>
 @endsection
+
+
+
+
+
+
