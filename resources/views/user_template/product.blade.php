@@ -22,8 +22,16 @@
                     </ul>
                 </div>
                 <div class="btn-main">
-                    <form action=""></form>
-                    <div class="btn btn-warning"><a href="">Add To Cart</a></div>
+                    <form action="{{ route('addproducttocart',$product->id) }}" method="POST">
+                        @csrf
+                        <input type="hidden" value="{{ $product->id }}" name="productid">
+                        <div class="form-group">
+                            <label for="product_quantity">How Many Pics ?</label>
+                            <input class="form-control" type="number" min='1' name="product_quantity" placeholder="1">
+                        </div>
+                        <br>
+                        <input class="btn btn-warning" type="submit" value="Add To Cart">
+                    </form>
                 </div>
             </div>
         </div>
