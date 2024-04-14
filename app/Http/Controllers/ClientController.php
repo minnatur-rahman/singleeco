@@ -32,11 +32,14 @@ class ClientController extends Controller
 
     public function AddProductToCart(Request $request)
     {
+        $product_price = $request->price;
+        $quantity = $request->quantity;
+        $price = $product_price * $quantity;
         Cart::insert([
             'product_id' => $request->product_id,
             'user_id' => Auth::id(),
             'quantity' => $request->quantity,
-            'price' => $
+            'price' => $price,
         ]);
     }
 

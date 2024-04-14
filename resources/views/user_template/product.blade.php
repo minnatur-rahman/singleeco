@@ -25,9 +25,8 @@
                         <form action="{{ route('addproducttocart') }}" method="POST">
                             @csrf
                             <input type="hidden" value="{{ $product->id }}" name="product_id">
-                            <input type="hidden" value="{{ $product->price }}" name="price">
-                            <input type="hidden" value="1" name="quantity">
                             <div class="form-group">
+                                <input type="hidden" value="{{ $product->price }}" name="price">
                                 <label for="quantity">How Many Pics ?</label>
                                 <input class="form-control" type="number" min='1' name="quantity"
                                     placeholder="1">
@@ -58,7 +57,9 @@
                                             <div class="buy_bt">
                                                 <form action="{{ route('addproducttocart') }}" method="POST">
                                                     @csrf
-                                                    <input type="hidden" value="{{ $product->id }}" name="productid">
+                                                    <input type="hidden" value="{{ $product->id }}" name="product_id">
+                                                    <input type="hidden" value="{{ $product->price }}" name="price">
+                                                    <input type="hidden" value="1" name="quantity">
 
                                                     <input class="btn btn-warning" type="submit" value="Buy Now">
                                                 </form>
