@@ -27,7 +27,9 @@ class ClientController extends Controller
 
     public function AddToCart()
     {
-        return view('user_template.addtocart');
+        $user_id = Auth::id();
+        $cart_items = Cart::where('user_id')->get();
+        return view('user_template.addtocart', compact('cart_items'));
     }
 
     public function AddProductToCart(Request $request)
