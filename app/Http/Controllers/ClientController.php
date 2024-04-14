@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ClientController extends Controller
 {
@@ -28,9 +30,14 @@ class ClientController extends Controller
         return view('user_template.addtocart');
     }
 
-    public function AddProductToCart()
+    public function AddProductToCart(Request $request)
     {
-
+        Cart::insert([
+            'product_id' => $request->product_id,
+            'user_id' => Auth::id(),
+            'quantity' => $request->quantity,
+            'price' => $
+        ]);
     }
 
     public function Checkout()

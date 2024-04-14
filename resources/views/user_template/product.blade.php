@@ -28,8 +28,8 @@
                             <input type="hidden" value="{{ $product->price }}" name="price">
                             <input type="hidden" value="1" name="quantity">
                             <div class="form-group">
-                                <label for="product_quantity">How Many Pics ?</label>
-                                <input class="form-control" type="number" min='1' name="product_quantity"
+                                <label for="quantity">How Many Pics ?</label>
+                                <input class="form-control" type="number" min='1' name="quantity"
                                     placeholder="1">
                             </div>
                             <br>
