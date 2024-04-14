@@ -41,6 +41,8 @@ class ClientController extends Controller
             'quantity' => $request->quantity,
             'price' => $price,
         ]);
+
+        return redirect()->route('addtocart')->with('message', 'Your Item Add To Cart Successfully !');
     }
 
     public function Checkout()
