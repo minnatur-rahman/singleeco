@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-12">
         <div class="box_main">
-            <form action="" method="POST">
+            <form action="{{ route('addshippingaddress') }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="phone_num">Phone Number</label>
