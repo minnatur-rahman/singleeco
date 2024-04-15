@@ -48,16 +48,16 @@
             </div>
         </div>
     </div>
-    <div class="space-bwting">
-        <form action="" method="POST">
-            @csrf
-            <input type="submit" class="btn btn-primary" value="Place Order" me-3>
-        </form>
 
         <form action="" method="POST">
-            @csrf
-            <input type="submit" class="btn btn-warning" value="Cancel Order">
+             @csrf
+             <input type="submit" class="btn btn-warning" value="Cancel Order">
         </form>
-    </div>
+        &#160; &#160; &#160;
+        <form action="" method="POST">
+             @csrf
+             <input type="submit" class="btn btn-primary" value="Place Order" me-3>
+        </form>
+
 </div>
 @endsection
