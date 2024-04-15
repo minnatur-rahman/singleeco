@@ -30,16 +30,22 @@
                             <td>{{ $product_name }}</td>
                             <td>{{ $item->quantity }}</td>
                             <td>{{$item->price }}</td>
-                            <td><a href="#" class="btn btn-warning">Remove</a></td>
+                            <td><a href="{{ route('removeitem', $item->id) }}" class="btn btn-warning">Remove</a></td>
+
                         </tr>
                         @php
                             $total = $total + $item->price;
                         @endphp
+                    @endforeach
+                         @if ($total > 0)
                         <tr>
+                            <td></td>
+                            <td></td>
                             <td>Total</td>
                             <td>{{ $total }}</td>
+                            <td><a href="{{ route('shippingaddress') }}" class="btn btn-info">Checkout Now</a></td>
                         </tr>
-                    @endforeach
+                        @endif
                 </table>
             </div>
         </div>
