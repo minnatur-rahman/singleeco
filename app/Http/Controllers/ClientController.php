@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ShippingInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,9 +60,30 @@ class ClientController extends Controller
         return view('user_template.shippingaddress');
     }
 
+    public function addshippingaddress(Request $request)
+    {
+        $request->validate([
+            'phone_number' => 'required|unique:shipping_infos',
+            'city_name' => 'required',
+            'postal_code' => 'required',
+        ]);
+
+        ShippingInfo::insert([
+            'user_id' => Auth::id(),
+            'phone_number' => $request->phone_number,
+            'city_name' => $request->city_name,
+            'postal_code' => $request->postal_code,
+        ]);
+
+        return redirect()->route('checkout');
+    }
+
     public function Checkout()
     {
-        return view('user_template.checkout');
+        $userid = Auth::id();
+        $cart_items = Cart::where('user_id',$userid)->get();
+        $shipping_address = ShippingInfo::where('user_id',$userid)->first();
+        return view('user_template.checkout', compact('cart_items','shipping_address'));
     }
 
     public function UserProfile()
