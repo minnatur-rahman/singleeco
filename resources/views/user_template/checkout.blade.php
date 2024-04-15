@@ -54,7 +54,7 @@
              <input type="submit" class="btn btn-warning" value="Cancel Order">
         </form>
         &#160; &#160; &#160;
-        <form action="" method="POST">
+        <form action="{{ route('placeorder') }}" method="POST">
              @csrf
              <input type="submit" class="btn btn-primary" value="Place Order" me-3>
         </form>

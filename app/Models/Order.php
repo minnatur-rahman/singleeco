@@ -9,10 +9,15 @@ class Order extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'subcategory_name',
-        'category_id',
-        'category_name',
-        'slug',
+        'user_id',
+        'shipping_phoneNumber',
+        'shipping_city',
+        'shipping_postalCode',
+        'product_name',
+        'quantity',
+        'total_price',
+
+
 
     ];
 }

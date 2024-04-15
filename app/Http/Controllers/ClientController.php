@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\ShippingInfo;
 use Illuminate\Http\Request;
@@ -51,7 +52,6 @@ class ClientController extends Controller
     public function RemoveCartItem($id)
     {
         Cart::findOrFail($id)->delete();
-
         return redirect()->route('addtocart')->with('message', 'Your Item Remove Form Cart Successfully !');
     }
 
@@ -84,6 +84,31 @@ class ClientController extends Controller
         $cart_items = Cart::where('user_id',$userid)->get();
         $shipping_address = ShippingInfo::where('user_id',$userid)->first();
         return view('user_template.checkout', compact('cart_items','shipping_address'));
+    }
+
+    public function PlaceOrder()
+    {
+        $userid = Auth::id();
+        $shipping_address = ShippingInfo::where('user_id',$userid)->first();
+        $cart_items = Cart::where('user_id',$userid)->get();
+
+        foreach($cart_items as $item){
+            Order::insert([
+                'user_id' => $userid,
+                'shipping_phoneNumber' => $shipping_address->phone_number,
+                'shipping_city' => $shipping_address->city_name,
+                'shipping_postalCode' => $shipping_address->postal_code,
+                'product_id' => $item->product_id,
+                'quantity' => $item->quantity,
+                'total_price' => $item->price,
+
+            ]);
+            $id = $item->id;
+            Cart::findOrFail($id)->delete();
+        }
+
+        return redirect()->route('pendingorders')->with('message', 'Your Order Placed Has Been Successfully !');
+
     }
 
     public function UserProfile()
