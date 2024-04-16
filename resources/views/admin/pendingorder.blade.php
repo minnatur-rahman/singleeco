@@ -5,9 +5,9 @@ Pending Order - Single Ecom
 @section('content')
 <div class="container">
     <div class="card">
-        <div class="card-title">Pending Order</div>
+        <div class="card-title"><h3 class="text-center mt-4">Pending Orders</h3></div>
         <div class="card-body">
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
                         <th>User Id</th>
@@ -15,7 +15,6 @@ Pending Order - Single Ecom
                         <th>Product Id</th>
                         <th>Quantity</th>
                         <th>Total Will Pay</th>
-                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -27,12 +26,13 @@ Pending Order - Single Ecom
                             <ul>
                                 <li>Phone Number - {{ $order->shipping_phoneNumber }}</li>
                                 <li>City - {{ $order->shipping_city }}</li>
-                                <li>Postal Code - {{ $oder->shipping_postalCode }}</li>
+                                <li>Postal Code - {{ $order->shipping_postalCode }}</li>
                             </ul>
                           </td>
                           <td>{{ $order->product_id }}</td>
                           <td>{{ $order->quantity }}</td>
                           <td>{{ $order->total_price }}</td>
+                          <td><a href="" class="btn btn-success">Approved Now</a></td>
                        </tr>
                     @endforeach
                 </tbody>

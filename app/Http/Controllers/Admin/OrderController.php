@@ -11,6 +11,6 @@ class OrderController extends Controller
     public function index()
     {
         $pending_orders = Order::where('status', 'pending')->latest()->get();
-        return view('admin.pendingorder', compact('pending_orders '));
+        return view('admin.pendingorder', compact('pending_orders'));
     }
 }
