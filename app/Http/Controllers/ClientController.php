@@ -135,10 +135,6 @@ class ClientController extends Controller
 
     public function ApproveOrder()
     {
-         // Fetch pending orders from the database
-    // $pending_orders = Order::where('status', 'pending')->get();
-
-    // Pass $pending_orders to the view
     return view('user_template.userprofile',);
     }
 

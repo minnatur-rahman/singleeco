@@ -86,7 +86,7 @@ $subcategories = App\Models\Subcategory::latest()->get();
                <div class="containt_main">
                   <div id="mySidenav" class="sidenav">
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                     <a href="index.html">Home</a>
+                     <a href="{{ route('home') }}">Home</a>
 
                      @foreach ( $subcategories as $subcat )
                          <a href="{{ route('subcategory', [$subcat->category_id, $subcat->slug] ) }}">{{ $subcat->subcategory_name	 }}</a>
