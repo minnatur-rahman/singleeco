@@ -118,7 +118,8 @@ class ClientController extends Controller
 
     public function PendingOrders()
     {
-        return view('user_template.pendingorders');
+        $pending_orders = Order::where('status', 'pending')->latest()->get();
+        return view('user_template.pendingorders',compact('pending_orders'));
     }
 
     public function History()

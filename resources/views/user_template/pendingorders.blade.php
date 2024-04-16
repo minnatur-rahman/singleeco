@@ -7,4 +7,6 @@
             {{ session()->get('message') }}
         </div>
     @endif
+
+
 @endsection
