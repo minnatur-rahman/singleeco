@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('user_template.layouts.template');
 // });
 
+
+
 Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'Index')->name('home');
 });
@@ -57,9 +59,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
 
-    Route::controller(AdminController::class)->group(function(){
-        Route::get('/admin/dashboard', 'index')->name('admindashboard');
-    });
+
+Route::get('/admin/dashboard',[AdminController::class, 'Index'])->middleware(['auth','admin']);
+
 
     Route::controller(CategoryController::class)->group(function(){
         Route::get('/admin/all-category', 'index')->name('allcategory');
