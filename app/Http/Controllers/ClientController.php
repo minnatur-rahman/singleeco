@@ -89,7 +89,7 @@ class ClientController extends Controller
     public function PlaceOrder()
     {
         $userid = Auth::id();
-        $shipping_address = ShippingInfo::where('user_id',$userid)->first();
+        $shipping_address = ShippingInfo::where('user_id', $userid)->first();
         $cart_items = Cart::where('user_id',$userid)->get();
 
         foreach($cart_items as $item){
@@ -105,7 +105,10 @@ class ClientController extends Controller
             ]);
             $id = $item->id;
             Cart::findOrFail($id)->delete();
+
         }
+
+        ShippingInfo::where('user_id', $userid)->first()->delete();
 
         return redirect()->route('pendingorders')->with('message', 'Your Order Placed Has Been Successfully !');
 
