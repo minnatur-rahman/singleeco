@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\ShippingInfo;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,6 +18,13 @@ class ClientController extends Controller
         $category = Category::findOrFail($id);
         $products = Product::where('product_category_id', $id)->latest()->get();
         return view('user_template.category', compact('category', 'products'));
+    }
+
+    public function SubCategoryPage($id)
+    {
+        $subcategory = Subcategory::findOrFail($id);
+        $products = Product::where('product_category_id', $id)->latest()->get();
+        return view('user_template.subcategory', compact('subcategory', 'products'));
     }
 
     public function SingleProduct($id)
@@ -123,6 +131,15 @@ class ClientController extends Controller
     {
         $pending_orders = Order::where('status', 'pending')->latest()->get();
         return view('user_template.pendingorders',compact('pending_orders'));
+    }
+
+    public function ApproveOrder()
+    {
+         // Fetch pending orders from the database
+    // $pending_orders = Order::where('status', 'pending')->get();
+
+    // Pass $pending_orders to the view
+    return view('user_template.userprofile',);
     }
 
     public function History()

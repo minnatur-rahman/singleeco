@@ -2,6 +2,13 @@
 $categories = App\Models\Category::latest()->get();
 @endphp
 
+
+@php
+$subcategories = App\Models\Subcategory::latest()->get();
+@endphp
+
+
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -80,18 +87,22 @@ $categories = App\Models\Category::latest()->get();
                   <div id="mySidenav" class="sidenav">
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                      <a href="index.html">Home</a>
-                     @foreach ( $categories as $category )
-                         <a href="{{ route('category', [$category->id, $category->slug] ) }}">{{ $category->category_name }}</a>
-                     @endforeach
+
+                     @foreach ( $subcategories as $subcat )
+                         <a href="{{ route('subcategory', [$subcat->category_id, $subcat->slug] ) }}">{{ $subcat->subcategory_name	 }}</a>
+                    @endforeach
+
                   </div>
                   <span class="toggle_icon" onclick="openNav()"><img src="{{ asset('home/images/toggle-icon.png') }}"></span>
                   <div class="dropdown">
                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category
                      </button>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
                         @foreach ( $categories as $category )
                         <a class="dropdown-item" href="{{ route('category', [$category->id, $category->slug] ) }}">{{ $category->category_name }}</a>
                         @endforeach
+
                      </div>
                   </div>
                   <div class="main">

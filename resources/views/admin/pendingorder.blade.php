@@ -32,7 +32,7 @@ Pending Order - Single Ecom
                           <td>{{ $order->product_id }}</td>
                           <td>{{ $order->quantity }}</td>
                           <td>{{ $order->total_price }}</td>
-                          <td><a href="" class="btn btn-success">Approved Now</a></td>
+                          <td><a href="{{ route('approveorder') }}" class="btn btn-success">Approved Now</a></td>
                        </tr>
                     @endforeach
                 </tbody>

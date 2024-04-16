@@ -23,6 +23,7 @@ Route::controller(HomeController::class)->group(function(){
 
 Route::controller(ClientController::class)->group(function(){
     Route::get('/category/{id}/{slug}', 'CategoryPage')->name('category');
+    Route::get('/subcategory/{id}/{slug}', 'SubCategoryPage')->name('subcategory');
     Route::get('/product-details/{id}/{slug}', 'SingleProduct')->name('singleproduct');
     Route::get('/new-release', 'NewRelease')->name('newrelease');
 });
@@ -37,6 +38,7 @@ Route::middleware(['auth', 'verified'])->group(function (){
         Route::get('/checkout', 'Checkout')->name('checkout');
         Route::get('/user-profile', 'UserProfile')->name('userprofile');
         Route::get('/user-profile/pending-orders', 'PendingOrders')->name('pendingorders');
+        Route::get('approve-order', 'ApproveOrder')->name('approveorder');
         Route::get('/user-profile/history', 'History')->name('history');
         Route::get('/todays-deal', 'TodaysDeal')->name('todaysdeal');
         Route::get('/custom-service', 'CustomerService')->name('customerservice');
