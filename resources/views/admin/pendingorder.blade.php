@@ -22,14 +22,17 @@ Pending Order - Single Ecom
                 <tbody>
                     @foreach ($pending_orders as $order )
                        <tr>
-                          <td>dgysgd</td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                          <td>{{ $order->user_id }}</td>
+                          <td>
+                            <ul>
+                                <li>Phone Number - {{ $order->shipping_phoneNumber }}</li>
+                                <li>City - {{ $order->shipping_city }}</li>
+                                <li>Postal Code - {{ $oder->shipping_postalCode }}</li>
+                            </ul>
+                          </td>
+                          <td>{{ $order->product_id }}</td>
+                          <td>{{ $order->quantity }}</td>
+                          <td>{{ $order->total_price }}</td>
                        </tr>
                     @endforeach
                 </tbody>
